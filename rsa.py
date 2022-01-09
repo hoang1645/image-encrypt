@@ -24,7 +24,7 @@ class RSA():
                 e = random.getrandbits(bits)
             
             self.n = p * q
-            gcd, self.d, _ = egcd(self.e, self.n)
+            gcd, self.d, _ = egcd(self.e, (p - 1) * (q - 1))
     
     ##########################################################
     def set_keys(self, n:int, e:int, d:int):
